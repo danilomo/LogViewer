@@ -1,0 +1,5 @@
+{
+    "yRange": [0, 100],
+    "expression": "100 - col[10]",
+    "label": "CPU active"
+}
