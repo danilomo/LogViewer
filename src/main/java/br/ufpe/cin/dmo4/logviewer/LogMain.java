@@ -15,9 +15,6 @@ import org.codehaus.jettison.json.JSONObject;
 public class LogMain {
 
     public static void main(String[] args) throws IOException, JSONException {
-        
-        args = new String[]{"config_1.json", "/home/danilo/Desktop/benchmarks/measurement/logFiles/log_io.txt"};
-        
         if(args.length != 2){
             System.err.println("Usage: java -jar logviewer.jar <config.json> <logfile>");
             System.exit(1);

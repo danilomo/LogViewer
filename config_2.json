@@ -1,0 +1,5 @@
+{
+    "yRange": [0, 50000],
+    "expression": "(col[1] + col[2])/(1024.0)",
+    "label": "Network bandwidth"
+}

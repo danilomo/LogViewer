@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufpe.cin.dmo4.logviewer;
 
 import java.io.IOException;
@@ -20,7 +15,6 @@ public class LogMonitor {
     private Process process;
     private Thread thread;
     private Scanner scanner;
-    private int column;
     private ValuesProvider provider;
     private LineParser parser;
 
@@ -44,18 +38,13 @@ public class LogMonitor {
 
     private Thread createControlThread() {
         Runnable r = () -> {
-            System.out.println("É nóis porra.");
-            System.out.println(process.isAlive());
             while (process.isAlive()) {
                 if (process.isAlive()) {
                     String str = null;
 
                     try {
                         str = scanner.nextLine().trim();
-//                        String[] arr = str.split(" ");
-//
-//                        double val = Double.parseDouble(arr[column]);
-
+                        
                         double val = parser.parse(str);
                         
                         System.out.println(">>" + val);
@@ -68,8 +57,6 @@ public class LogMonitor {
 
                 }
             }
-            
-            System.out.println("Saiu da thread.");
 
         };
 
